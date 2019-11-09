@@ -13,6 +13,15 @@
     },
     "myapp": {
       "tags": []
+    },
+    "header": {
+      "tags": ["header"]
+    },
+    "ui": {
+      "tags": []
+    },
+    "auth": {
+      "tags": []
     }
   }
 }
