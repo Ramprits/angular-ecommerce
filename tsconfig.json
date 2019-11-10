@@ -18,7 +18,8 @@
     "paths": {
       "@workspace/header": ["libs/header/src/index.ts"],
       "@workspace/ui": ["libs/ui/src/index.ts"],
-      "@workspace/auth": ["libs/auth/src/index.ts"]
+      "@workspace/auth": ["libs/auth/src/index.ts"],
+      "@workspace/items": ["libs/items/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

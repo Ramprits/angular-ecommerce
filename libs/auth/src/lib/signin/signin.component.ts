@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'workspace-signin',
@@ -8,25 +9,18 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class SigninComponent implements OnInit {
   form: FormGroup;
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, public auth: AuthService) {}
 
   ngOnInit() {
     this.buildForm();
   }
   buildForm() {
     this.form = this.fb.group({
-      username: [
-        '',
-        [Validators.required, Validators.min(6), Validators.max(20)]
-      ],
-      email: ['', [Validators.required, Validators.email]],
+      identifier: ['vershasahani@gmail.com', [Validators.required]],
       password: [
-        '',
-        [Validators.required, Validators.min(6), Validators.max(20)]
+        'vershasahani@gmail.com',
+        [Validators.required, Validators.min(6)]
       ]
     });
-  }
-  onSigninFormSubmit(data) {
-    console.log(JSON.stringify(data));
   }
 }

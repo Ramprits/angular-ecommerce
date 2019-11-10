@@ -1,7 +1,7 @@
 <form
   class="form-container"
   [formGroup]="form"
-  (submit)="onSigninFormSubmit(form.value)"
+  (submit)="auth.login(form.value)"
 >
   <div class="box">
     <div class="field">
@@ -9,8 +9,8 @@
       <div class="control">
         <input
           class="input"
-          type="email"
-          formControlName="email"
+          type="text"
+          formControlName="identifier"
           placeholder="e.g. alexsmith@gmail.com"
         />
       </div>
@@ -31,4 +31,5 @@
       <button class="button is-primary" type="submit">Sign In</button>
     </div>
   </div>
+  {{ form.value | json }}
 </form>

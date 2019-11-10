@@ -21,7 +21,11 @@
             "polyfills": "apps/myapp/src/polyfills.ts",
             "tsConfig": "apps/myapp/tsconfig.app.json",
             "aot": false,
-            "assets": ["apps/myapp/src/favicon.ico", "apps/myapp/src/assets", "apps/myapp/src/manifest.webmanifest"],
+            "assets": [
+              "apps/myapp/src/favicon.ico",
+              "apps/myapp/src/assets",
+              "apps/myapp/src/manifest.webmanifest"
+            ],
             "styles": ["apps/myapp/src/styles.scss"],
             "scripts": []
           },
@@ -201,6 +205,37 @@
             "jestConfig": "libs/auth/jest.config.js",
             "tsConfig": "libs/auth/tsconfig.spec.json",
             "setupFile": "libs/auth/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "items": {
+      "projectType": "library",
+      "root": "libs/items",
+      "sourceRoot": "libs/items/src",
+      "prefix": "workspace",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/items/tsconfig.lib.json",
+              "libs/items/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/items/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/items/jest.config.js",
+            "tsConfig": "libs/items/tsconfig.spec.json",
+            "setupFile": "libs/items/src/test-setup.ts"
           }
         }
       },
